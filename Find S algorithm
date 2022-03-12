@@ -1,0 +1,100 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled1.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyP3JynTjHLQpVcClYg/+udb",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/harshini22-hue/20MIS7073/blob/main/Find%20S%20algorithm\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 130
+        },
+        "id": "8p4vqUNDsg3K",
+        "outputId": "51e43f28-6fb4-4311-f8f9-6c2506170a79"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "IndentationError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"<ipython-input-5-8d5bce1ebbdd>\"\u001b[0;36m, line \u001b[0;32m6\u001b[0m\n\u001b[0;31m    reader = csv.reader(csvfile:)\u001b[0m\n\u001b[0m         ^\u001b[0m\n\u001b[0;31mIndentationError\u001b[0m\u001b[0;31m:\u001b[0m expected an indented block\n"
+          ]
+        }
+      ],
+      "source": [
+        "import csv\n",
+        "num_attributes = 6\n",
+        "a = []\n",
+        "print(\"\\n The Given Training Data Set \\n\")\n",
+        "with open('enjoysport.csv', 'r') as csvfile:\n",
+        "reader = csv.reader(csvfile:)\n",
+        "for row in reader:\n",
+        "  a.append(row)\n",
+        "  print(row)\n",
+        "  print(\"\\n The initial value of hypothesis: \")\n",
+        "  hypothesis = ['0'] * num_attributes\n",
+        "  print(hypothesis)\n",
+        "  for j in range (0,num_attributes):\n",
+        "    hypothesis[j] = a[0][j];\n",
+        "    print(\"\\n Find S: Finding a Maximally Specific Hypothesis \\n\")\n",
+        "    for i in range(0,len(a)):\n",
+        "      if a[i][num_attributes]=='yes':\n",
+        "        for j in range(0,num_attributes):\n",
+        "          if a[i][j]!=hypothesis[j]:\n",
+        "            hypothesis[j]='?'\n",
+        "            else :\n",
+        "              hypothesis[j]=a[i][j]\n",
+        "              print(\" For Training instance No: {0} the hypothesis is\".format(i), hypothesis)\n",
+        "              print(\"\\n The Maximally Specific Hypothesis for a given Training Examples:\\n\")\n",
+        "              print(hypothesis)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "l1aEyfsHv7Kk"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "XYrjUOqRv4Je"
+      }
+    }
+  ]
+}
